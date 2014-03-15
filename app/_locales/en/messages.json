@@ -1,0 +1,11 @@
+{
+    "appName": {
+        "message": "drone.io notifier",
+        "description": "The name of the application"
+    },
+    "appDescription": {
+        "message": "An extension for drone.io build notifier.",
+        "description": "The description of the application"
+    }
+}
+

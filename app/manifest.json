@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "__MSG_appName__",
+    "version": "0.1.0",
+    "description": "__MSG_appDescription__",
+    "default_locale": "en",
+    "background": {
+        "scripts": [
+            "lib/jquery/jquery.js",
+            "scripts/options.min.js",
+            "scripts/notifier.min.js",
+            "scripts/background.min.js"
+        ],
+        "persistent": false
+    },
+    "permissions": [
+        "alarms",
+        "tabs",
+        "https://drone.io/"
+    ],
+    "icons": {
+        "16": "images/icon_016.png",
+        "48": "images/icon_048.png",
+        "128": "images/icon_128.png"
+    },
+    "browser_action": {
+        "default_icon": "images/icon_048.png",
+        "default_title": "drone.io notifier"
+    },
+    "options_page": "options_page.html"
+}
