@@ -1,11 +1,23 @@
 class @Notifier
-  constructor: (options) ->
-    @host = options.host
-    @service = options.service
-    @repository = options.repository
+  constructor: (@_options) ->
+
+  options: ->
+    @_options.fetch() or @_options.init()
+
+  host: ->
+    @options().host
+
+  service: ->
+    @options().service
+
+  repository: ->
+    @options().repository
+
+  isConfigured: ->
+    @host() and @service() and @repository()
 
   url: ->
-    "https://#{@host}/#{@service}/#{@repository}"
+    "https://#{@host()}/#{@service()}/#{@repository()}"
 
   latest: ->
     "#{@url()}/latest"
@@ -28,7 +40,7 @@ class @Notifier
     chrome.browserAction.setBadgeText text: "#{num}"
 
   request: ->
-    return unless @host and @service and @repository
+    return unless @isConfigured()
 
     $.ajax
       url: @latest()
