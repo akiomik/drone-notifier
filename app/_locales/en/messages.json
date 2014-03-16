@@ -4,7 +4,7 @@
         "description": "The name of the application"
     },
     "appDescription": {
-        "message": "An extension for drone.io build notifier.",
+        "message": "An extension for drone.io build notification.",
         "description": "The description of the application"
     }
 }
