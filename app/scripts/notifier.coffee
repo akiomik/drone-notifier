@@ -38,11 +38,8 @@ class @Notifier
       url: @latest()
     .done (data) =>
       text = ($ data).find('#statusBtn').text()
-      if text is ''
-        @updateIcon '', ''
-      else
-        [[], num, status] = text.split ' '
-        @updateIcon num.substr(1), status.toLowerCase()
+      message = new Message text
+      @updateIcon message.num, message.status
     .fail (xhr, status) =>
       console.error 'request failed', status
       @updateIcon '-', 'error'

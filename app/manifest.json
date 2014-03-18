@@ -8,6 +8,7 @@
         "scripts": [
             "lib/jquery/jquery.js",
             "scripts/options.min.js",
+            "scripts/message.min.js",
             "scripts/notifier.min.js",
             "scripts/background.min.js"
         ],
