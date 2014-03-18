@@ -31,7 +31,7 @@ class @Notifier
     chrome.browserAction.setBadgeBackgroundColor color: color
     chrome.browserAction.setBadgeText text: "#{num}"
 
-  request: ->
+  request: (callback) ->
     return unless @isConfigured()
 
     $.ajax
@@ -40,7 +40,9 @@ class @Notifier
       text = ($ data).find('#statusBtn').text()
       message = new Message text
       @updateIcon message.num, message.status
+      callback(null, message) if callback?
     .fail (xhr, status) =>
       console.error 'request failed', status
       @updateIcon '-', 'error'
+      callback(status, null) if callback?
 
