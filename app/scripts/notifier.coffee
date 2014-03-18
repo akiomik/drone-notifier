@@ -22,14 +22,6 @@ class @Notifier
   latest: ->
     "#{@url()}/latest"
 
-  onInit: ->
-    chrome.alarms.create 'refresh', periodInMinutes: 5
-    @request()
-
-  onAlarm: (alarm) ->
-    if alarm?.name is 'refresh'
-      @request()
-
   updateIcon: (num, status) ->
     color =
       if status is 'success'
