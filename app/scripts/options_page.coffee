@@ -1,12 +1,14 @@
+options = new Options 'drone-notifier'
+
 ($ '#save').on 'click', (event) ->
-  options =
+  opts =
     host: ($ '#host').val()
     service: ($ '#service').val()
     repository: ($ '#repository').val()
-  Options.save options
+  options.save opts
 
-options = Options.fetch() or Options.init()
-($ '#host').val options.host
-($ '#service').val options.service
-($ '#repository').val options.repository
+opts = options.fetch() or options.init()
+($ '#host').val opts.host
+($ '#service').val opts.service
+($ '#repository').val opts.repository
 

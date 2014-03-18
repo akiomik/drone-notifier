@@ -1,4 +1,5 @@
-notifier = new Notifier Options
+options = new Options 'drone-notifier'
+notifier = new Notifier options
 badge = new Badge()
 
 onRequest = (err, text) ->
