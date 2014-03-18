@@ -1,11 +1,7 @@
 class @Message
-  constructor: (@text) ->
-    [@num, @status] =
-      if @isEmpty()
-        ['', '']
-      else
-        [[], num, status] = text.split ' '
-        [(num.substr 1), status.toLowerCase()]
+  constructor: (params) ->
+    @num = params.num
+    @status = params.status
 
   isEmpty: ->
     @text is ''
